@@ -11,6 +11,7 @@ struct HomeView: View {
     @State private var showSheet = false
     @State private var selectedColor: Color = .blue
     @State private var showTip = false
+    @State private var isToggleOn = false
 
     var body: some View {
         NavigationStack {
@@ -22,6 +23,10 @@ struct HomeView: View {
 
                     // TipKit (iOS 17+)
                     TipView(TryNewFeaturesTip())
+
+                    Toggle("Enable Feature", isOn: $isToggleOn)
+                                           .padding(.horizontal)
+                    Text("Toggle is \(isToggleOn ? "ON" : "OFF")")
 
                     // ShareLink (iOS 16+)
                     ShareLink(item: URL(string: "https://developer.apple.com/")!) {
