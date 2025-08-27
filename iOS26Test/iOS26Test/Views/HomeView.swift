@@ -17,12 +17,13 @@ struct HomeView: View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 24) {
-                    Text("Welcome to iOS 26 Demo 🚀")
+                    Text("iOS 26 Demo 🚀")
                         .font(.largeTitle.bold())
                         .padding(.top)
 
                     // TipKit (iOS 17+)
-                    TipView(TryNewFeaturesTip())
+                    //TipView(TryNewFeaturesTip())
+                    TipView(TryNewFeaturesTip(), arrowEdge: .top)
 
                     Toggle("Enable Feature", isOn: $isToggleOn)
                                            .padding(.horizontal)
@@ -100,7 +101,12 @@ struct TryNewFeaturesTip: Tip {
     var title: Text {
         Text("Try new features!")
     }
+    
     var message: Text? {
         Text("features in this demo app.")
+    }
+
+    var image: Image? {
+        Image(systemName: "photo")
     }
 }

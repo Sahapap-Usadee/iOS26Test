@@ -6,9 +6,14 @@
 //
 
 import SwiftUI
+import TipKit
 
 @main
 struct iOS26TestApp: App {
+    init() {
+        try? Tips.configure()
+        try? Tips.resetDatastore()
+    }
     var body: some Scene {
         WindowGroup {
             ContentView()
