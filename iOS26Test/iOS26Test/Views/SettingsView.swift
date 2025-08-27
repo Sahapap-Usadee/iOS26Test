@@ -60,7 +60,7 @@ struct SettingsView: View {
                         VStack(spacing: 16) {
                             Text("Popover Example")
                                 .font(.headline)
-                            Text("This is a popover in iOS 18.")
+                            Text("This is a popover")
                             Button("Close") { showPopover = false }
                         }
                         .padding()
